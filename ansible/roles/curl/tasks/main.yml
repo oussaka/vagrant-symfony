@@ -1,4 +1,4 @@
 ---
 - name: Install cURL
-  sudo: yes
+  become: yes
   apt:  pkg=curl state=latest
