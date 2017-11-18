@@ -23,5 +23,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision :ansible_local do |ansible|
         ansible.extra_vars = { ansible_ssh_user: 'vagrant' }
         ansible.playbook = "ansible/site.yml"
+        # ansible.limit = "--limit @/vagrant/ansible/site.retry"
+        ansible.limit = "@/vagrant/ansible/site.retry"
     end
 end
